@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <!-- <pre> START _default/list.html</pre> -->
+
+  <!-- $pages -->
+  {{ $pages := union .RegularPages .Sections }}
+  <!-- Get list of all posts in array for homepage listing only -->
+  {{ if .IsHome }}
+    {{ $pages = where site.RegularPages "Type" "in" site.Params.mainSections }}
+  {{ end }}
+  <ul class="homepage-list" style="list-style:none;padding:1rem 0;">
+    <!-- List all articles on homepage -->
+    {{ $paginator := .Paginate $pages }} {{ range $index, $page := $paginator.Pages }}
+      <li style="align-items:center;display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:10px;">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+        <time style="font-size:90%;" datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time>
+      </li>
+    {{ end }}
+  </ul>
+  <!-- <pre> END _default/list.html</pre> -->
+{{ end }}

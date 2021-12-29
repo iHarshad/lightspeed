@@ -1,0 +1,82 @@
+<head>
+  <!-- <pre> START partials/head.html</pre> -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    {{ if .IsHome }}
+      {{ .Site.Title }} &middot; {{ .Site.Params.tagline }}
+    {{ else }}
+      {{ .Page.Title }} &middot; {{ .Site.Title }}
+    {{ end }}
+  </title>
+
+  <!-- Meta -->
+  {{ if .Page.Description }}
+    <meta name="description" content="{{ .Page.Description }}">
+  {{ end }}
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ `favicon.ico` | absURL }}" />
+  <link rel="apple-touch-icon" href="{{ `apple-touch-icon.png` | absURL }}" />
+
+  <!-- RSS -->
+  {{ range .AlternativeOutputFormats }}
+  <link
+    rel="{{ .Rel }}"
+    type="{{ .MediaType.Type }}"
+    href="{{ .Permalink  | safeURL }}"
+    title="{{ site.Title }}"
+  />
+  {{ end }}
+
+  <style type="text/css">
+    html,
+    body {
+      background: #fffaf7;
+      color: #2d2d2d;
+      font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    a,
+    a:visited {
+      color: darkred;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      margin: auto;
+      max-width: 38rem;
+      padding: 0.8rem;
+    }
+
+    pre {
+      background: white;
+      overflow: scroll;
+      padding: 1rem;
+    }
+
+    td {
+      border: 1px solid #2d2d2d;
+      padding: 10px;
+    }
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+
+    @media(max-width:38rem) {
+      .homepage-list li a {
+        width: 100%;
+      }
+    }
+  </style>
+  <!-- <pre> END partials/head.html</pre> -->
+</head>

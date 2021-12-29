@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- <pre> START _default/baseof.html</pre> -->
+
+<html>
+  {{ partial "head.html" . }}
+
+  <body>
+    <main id="main" role="main">
+      {{ partial "header.html" . }}
+
+      {{ block "main" . }}{{ end }}
+
+      {{ partial "footer.html" . }}
+    </main>
+  </body>
+  <!-- <pre> END _default/baseof.html</pre> -->
+</html>

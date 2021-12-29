@@ -1,0 +1,11 @@
+{{ define "main" }}
+<!-- <pre> START _default/single.html</pre> -->
+
+<article class="post-single">
+  <h1>{{ .Title }}</h1>
+  <p style="font-size:90%;">Posted on <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+  <section class="post-content">{{ .Content }}</section>
+</article>
+
+<!-- <pre> END _default/single.html</pre> -->
+{{ end }}

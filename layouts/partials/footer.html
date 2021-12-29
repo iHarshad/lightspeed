@@ -1,0 +1,15 @@
+<footer role="contentinfo">
+  <!-- <pre> START partials/footer.html</pre> -->
+  <hr>
+  <nav style="margin-bottom:1rem;" role="navigation">
+    <a href="{{ .Site.BaseURL }}about">About</a>
+    <span>&middot;</span>
+    <a href="{{ .Site.BaseURL }}index.xml">RSS</a>
+  </nav>
+  <small>
+    Built with <a href="https://gohugo.io" rel="noopener" target="_blank">Hugo</a> & hosted on <a href="https://netlify.com" rel="noopener" target="_blank">Netlify</a>.<br>
+    Maintained with &hearts; for the web.
+    <p>&copy; {{ now.Year }} <a href="{{ `` | absURL }}">{{ .Site.Title }}</a></p>
+  </small>
+<!-- <pre> END partials/footer.html</pre> -->
+</footer>
