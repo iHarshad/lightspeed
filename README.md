@@ -1,6 +1,8 @@
 # Light Speed
 
-An insanely fast and performance-based Zola theme, ported from [Light Speed Jekyll](https://github.com/bradleytaunt/lightspeed).
+An insanely fast and performance-based Hugo theme, ported from [Light Speed Jekyll](https://github.com/bradleytaunt/lightspeed).
+
+![Theme Preview](Screenshot.png)
 
 Some fun facts about the theme:
 
@@ -10,9 +12,19 @@ Some fun facts about the theme:
 * Now with SEO!
 
 -----
-## Theme settings
-Add the below details to Hugo's site configuration file - `./config.toml` file.
+## Theme Installation
+1. Add the theme files `./themes/lightspeed/` folder of your Hugo site
+2. Update Hugo's site configuration file - `./config.toml` - with the below details
 ```toml
+# config.toml
+baseURL = 'https://example.com'
+languageCode = 'en-us'
+title = 'Light Speed'
+theme = "lightspeed"
+
 [params]
-  tagline = "Hugo theme with a perfect Lighthouse score"
+  tagline = 'Hugo theme with a perfect Lighthouse score'
 ```
+
+## License
+Open sourced under the [MIT license](LICENSE).
