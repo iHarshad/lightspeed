@@ -7,9 +7,40 @@
     <a href="{{ .Site.BaseURL }}index.xml">RSS</a>
   </nav>
   <small>
-    Built with <a href="https://gohugo.io" rel="noopener" target="_blank">Hugo</a> & hosted on <a href="https://netlify.com" rel="noopener" target="_blank">Netlify</a>.<br>
-    Maintained with &hearts; for the web.
-    <p>&copy; {{ now.Year }} <a href="{{ `` | absURL }}">{{ .Site.Title }}</a></p>
+    {{ if site.Params.BuiltWith }}
+      Built with <a href="https://gohugo.io" rel="noopener" target="_blank">Hugo</a>
+      {{ if site.Params.HostedOn }}
+      <!-- If BuiltWith and HostedOn is true, use lowercase -->
+        {{ $hashLink    := "#" }}
+        & hosted on <a href="{{ .Site.Params.HostedOnLink | default $hashLink }}" rel="noopener" target="_blank">{{ .Site.Params.HostedOn }}</a>.<br>
+      {{ end }}
+    {{ end }}
+
+    {{ if site.Params.HostedOn }}
+      <!-- If only HostedOn is true, start with capital -->
+      {{ $hashLink    := "#" }}
+      Hosted on <a href="{{ .Site.Params.HostedOnLink | default $hashLink }}" rel="noopener" target="_blank">{{ .Site.Params.HostedOn }}</a>.<br>
+    {{ end }}
+
+    {{ if eq site.Params.MaintainedMsg true }}
+      <!-- Use default message if true -->
+      Maintained with &hearts; for the web.
+    {{ else }}
+      {{ if and (ne site.Params.MaintainedMsg true) (ne site.Params.MaintainedMsg false) }}
+      <!-- Use custom message if not true or false -->
+        {{ .Site.Params.MaintainedMsg }}
+      {{ end }}
+    {{ end }}
+
+
+    <p>
+      &copy;
+      {{ if (isset .Site.Params "copyrightstartyear") }}
+        {{ index .Site.Params "copyrightstartyear" }} &ndash;
+      {{ end }}
+      {{ now.Year }}
+      <a href="{{ `` | absURL }}">{{ .Site.Title }}</a>
+    </p>
   </small>
 <!-- <pre> END partials/footer.html</pre> -->
 </footer>
