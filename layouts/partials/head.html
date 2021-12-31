@@ -60,6 +60,7 @@
       background: white;
       overflow: scroll;
       padding: 1rem;
+      border-radius: 5px;
     }
 
     td {
@@ -70,6 +71,29 @@
     img {
       height: auto;
       max-width: 100%;
+    }
+
+    blockquote {
+      border-left: 1px dotted darkred ;
+      margin: 40px 0;
+      padding: 5px 30px;
+    }
+
+    blockquote p {
+      color: #aeadad;
+      display: block;
+      font-style: italic;
+      margin: 0;
+      width: 100%;
+    }
+
+    /* code { */
+    :not(pre) > code {
+      padding: 2px 4px;
+      font-size: 90%;
+      border-radius: 5px;
+      color: #e17b7b;
+      background-color: #ffffff;
     }
 
     @media(max-width:38rem) {
