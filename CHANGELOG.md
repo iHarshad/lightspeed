@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/iHarshad/lightspeed/compare/v1.1.0...v1.2.0) (2022-01-11)
+
+
+### Features
+
+* show post tags & categories on article page ([a5bd65f](https://github.com/iHarshad/lightspeed/commit/a5bd65f88503bb3b695fcfa89ac8bdadfddae904))
+
 ## [1.1.0](https://github.com/iHarshad/lightspeed/compare/v1.0.0...v1.1.0) (2021-12-31)
 
 
