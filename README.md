@@ -22,11 +22,11 @@ theme = "lightspeed"
   tagline = 'Hugo theme with a perfect Lighthouse score'
 ```
 
-## Theme Options
-Available options under `[params]` in `config.toml`.
+## Theme Customization
+These customization options are available under `[params]` in `config.toml`.
 ```toml
 [params]
-  OptionName = OptionValue
+  OptionName = "OptionValue"
 ```
 
 | Option               | Example Values          | Description |
@@ -34,7 +34,7 @@ Available options under `[params]` in `config.toml`.
 | `BodyBackground`     | `"#f1faee"`             | Override the background color for all pages. |
 | `FontColor`          | `"#1d3557"`             | Override the font color for all pages. |
 | `HrefLink`           | `"#e63946"`             | Override the font color for all links. |
-| `PreBackground`      | `"#fdfdfd"`               | Override the background color for all inline code blocks. |
+| `PreBackground`      | `"#fdfdfd"`             | Override the background color for all inline code blocks. |
 | `PreFontColor`       | `"#457b9d"`             | Override the font color for all inline code blocks. |
 | `TableBorder`        | `"#424242"`             | Override the font color for table borders. |
 | `CopyrightStartYear` | `"2020"`                |  If set, it will show **(C)&lt;Start Year&gt; - &lt;Current Year&gt;** in footer.<br>If not defined, footer defaults to show **(C) &lt;Current Year&gt;**. |
@@ -43,6 +43,16 @@ Available options under `[params]` in `config.toml`.
 | `HostedOnLink`       | `"https://netlify.com"` | Link to hosting provider website. Defaults to `#` if not set. The `HostedOn` option needs to be set for this to render. |
 | `MaintainedMsg`      | `true`                  | `true` - Shows _Maintained with &hearts; for the web._ in footer.<br>`false` - Do not show anything in footer.<br>`Custom Message` - Shows custom message in footer. |
 
+### Extra Theme Features
+These extra theme features are not a part of the original theme. They are made available under `[params]` in `config.toml`.
+```toml
+[params]
+  OptionName = "OptionValue"
+```
+| Option               | Example Values     | Description |
+| -------------------- | ------------------ | ----------- |
+| `ShowCategories`     | `true`             | Show post categories under post title on single page |
+| `FontColor`          | `true`             | Show post tags at the end of the article on single page |
 ### Override Favicon
 To override default favicons, place them in your Hugo projects `static` directory.
  * `./static/favicon.svg`

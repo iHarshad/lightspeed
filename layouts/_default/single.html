@@ -4,7 +4,32 @@
 <article class="post-single">
   <h1>{{ .Title }}</h1>
   <p style="font-size:90%;">Posted on <time datetime="{{ .Date }}">{{ .Date.Format "January 2, 2006" }}</time></p>
+  <!-- Post Categories -->
+  {{ if eq site.Params.ShowCategories true }}
+    {{ if .Params.categories }}
+      <span style="font-size:90%;" class="meta-section categories">Categories:
+        {{ range .Params.categories }} {{ $href := print (absURL "categories/") (urlize .) }}
+          <code style="margin: 0.1rem;">
+            <a class="tag" href="{{ $href }}">{{ . }}</a>
+          </code>
+        {{ end }}
+      </span>
+    {{ end }}
+  {{ end }}
   <section class="post-content">{{ .Content }}</section>
+
+  <!-- Post Tags -->
+  {{ if eq site.Params.ShowTags true }}
+    {{ if .Params.tags }}
+      <span style="font-size:90%;" class="meta-section tags">Tags:
+        {{ range .Params.tags }} {{ $href := print (absURL "tags/") (urlize .) }}
+          <code style="margin: 0.1rem;">
+            <a class="tag" href="{{ $href }}">{{ . }}</a>
+          </code>
+        {{ end }}
+      </span>
+    {{ end }}
+  {{ end }}
 </article>
 
 <!-- <pre> END _default/single.html</pre> -->
