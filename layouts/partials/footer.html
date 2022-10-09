@@ -36,7 +36,10 @@
     <p>
       &copy;
       {{ if (isset .Site.Params "copyrightstartyear") }}
-        {{ index .Site.Params "copyrightstartyear" }} &ndash;
+        {{ $globalyear := int $.Site.Params.CopyrightStartYear }}
+        {{ if ne $globalyear now.Year }}
+          {{ index .Site.Params "copyrightstartyear" | safeHTML }} &ndash;
+        {{ end }}
       {{ end }}
       {{ now.Year }}
       <a href="{{ `` | absURL }}">{{ .Site.Title }}</a>
